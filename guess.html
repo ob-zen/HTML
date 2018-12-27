@@ -1,30 +1,31 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<title>Угадай число</title>
-	</head>
-	<body>
-		<script type="text/javascript">
-			var maxcount=10;
-			var answer=parseint(Math.random() * 100);
-			var stepCount=1;
-
-			while (maxcount > 0) {
-				var userAnswer = prompt("Угадай число, будь мужиком, блеать! У тебя еще" + maxcount + "Попыток");
-					userAnswer = parseint(userAnswer);
-
-				if (userAnswer < answer) {alert("Недолет. Мало каши ел.");}
-				else if (userAnswer > answer) {alert("Перебор. Тише, ковбой!");}
-				else if (userAnswer == answer) {alert("Бинго. Ударь в кулачок, бро!");} 
-				else {alert ("Введи число, товарищ!");}
-			
-				maxcount --;	
-			}
-
-			if (maxcount == 0) {
-				alert("Днина. Машина загадала " + answer);
-			}
-		</script>
-	</body>
-</html>
+<!DOCTYPE ​html​>
+<​html​>
+	<​head​>
+​		<​meta ​charset= ​"utf-8"​>
+​		<​title​>​Угадай число​</​title​>
+</​head​>
+<​body​>
+​	<​script​>
+​ ​		var ​answer = ​parseInt ​( ​Math ​. ​random ​() * ​100 ​);
+​ ​		var ​attempt = ​1 ​;
+​ ​		var ​attemptsCount = ​7 ​;
+​ ​ 	​while ​( ​attempt <= ​attemptsCount) {
+​ 			​var ​userAnswer = ​prompt ​( ​"Угадайте число от 0 до 100, у вас 7 попыток. Попытка № " ​+ ​attempt);
+​ 			​userAnswer = ​parseInt ​( ​userAnswer);
+​ ​ 	​if ​( ​userAnswer > ​answer) {
+			​alert ​( ​"Ваш ответ слишком большой." ​);​ }
+			​else if ​( ​userAnswer < ​answer) {
+​			alert ​( ​"Ваш ответ слишком маленький." ​);}
+			​else if ​( ​userAnswer == ​answer) {​alert ​( ​"Вы угадали!" ​);}
+			​break ​;
+​		else ​{
+​			alert ​( ​"Необходимо ввести число!" ​);
+		}
+	​ ​attempt++;
+	 } 
+​ ​ ​	if ​( ​attempt > ​attemptsCount) {
+​ 		​alert ​( ​"К сожалению вы не угадали. Было загадано число: " ​+ ​answer);
+		}
+	​</​script​>
+</​body​>
+</​html>
