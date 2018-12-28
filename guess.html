@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE ​html​>
 <​html​>
 	<​head​>
@@ -29,3 +30,42 @@
 	​</​script​>
 </​body​>
 </​html>
+=======
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Угадай число</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var maxcount=10;
+			var answer=parseint(Math.random() * 100);
+			var stepCount=1;
+
+			while (maxcount > 0) {
+				var userAnswer = prompt("Угадай число, будь мужиком, блеать! У тебя еще" + maxcount + "Попыток");
+					userAnswer = parseint(userAnswer);
+
+				if (userAnswer < answer) {
+					alert("Недолет. Мало каши ел.");
+				}
+				else if (userAnswer > answer) {
+					alert("Перебор. Тише, ковбой!");
+				}
+				else if (userAnswer == answer) {
+					alert("Бинго. Ударь в кулачок, бро!");
+				}
+					break; 
+				else {alert ("Введи число, товарищ!");}
+			
+				maxcount --;	
+			}
+
+			if (maxcount == 0) {
+				alert("Днина. Машина загадала " + answer);
+			}
+		</script>
+	</body>
+</html>
+>>>>>>> Stashed changes
