@@ -1,31 +1,35 @@
-<!DOCTYPE ​html​>
-<​html​>
-	<​head​>
-​		<​meta ​charset= ​"utf-8"​>
-​		<​title​>​Угадай число​</​title​>
-</​head​>
-<​body​>
-​	<​script​>
-​ ​		var ​answer = ​parseInt ​( ​Math ​. ​random ​() * ​100 ​);
-​ ​		var ​attempt = ​1 ​;
-​ ​		var ​attemptsCount = ​7 ​;
-​ ​ 	​while ​( ​attempt <= ​attemptsCount) {
-​ 			​var ​userAnswer = ​prompt ​( ​"Угадайте число от 0 до 100, у вас 7 попыток. Попытка № " ​+ ​attempt);
-​ 			​userAnswer = ​parseInt ​( ​userAnswer);
-​ ​ 	​if ​( ​userAnswer > ​answer) {
-			​alert ​( ​"Ваш ответ слишком большой." ​);​ }
-			​else if ​( ​userAnswer < ​answer) {
-​			alert ​( ​"Ваш ответ слишком маленький." ​);}
-			​else if ​( ​userAnswer == ​answer) {​alert ​( ​"Вы угадали!" ​);}
-			​break ​;
-​		else ​{
-​			alert ​( ​"Необходимо ввести число!" ​);
-		}
-	​ ​attempt++;
-	 } 
-​ ​ ​	if ​( ​attempt > ​attemptsCount) {
-​ 		​alert ​( ​"К сожалению вы не угадали. Было загадано число: " ​+ ​answer);
-		}
-	​</​script​>
-</​body​>
-</​html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Угадай число</title>
+	</head>
+	<body>
+		<script>
+			var maxcount=10;
+			var answer= parseInt(Math.random() * 100);
+			var stepCount=1;
+			
+			while (stepCount <= maxcount) {
+				var userAnswer = prompt("Угадай число от 0 до 100, будь мужиком! У тебя 10 попыток, попытка №" + stepCount)
+				userAnswer = parseInt(userAnswer);
+
+				if ( userAnswer == answer) {alert("Красава. Отбей кулачок");
+				break;
+				}
+				else if (userAnswer < answer) {alert("Мало каши ел. Надо больше");
+				}
+				else if (userAnswer > answer) {alert("Тише, ковбой. Перебор.");
+				}
+				else {alert("Введи число по-мужски!!!");
+				 }
+
+				stepCount++; 
+			}
+			
+			if (stepCount > maxcount) {
+				alert("Днина. Загадано было " + answer);
+			}
+		</script>
+	</body>
+</html>
