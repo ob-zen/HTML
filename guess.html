@@ -5,32 +5,30 @@
 		<title>Угадай число</title>
 	</head>
 	<body>
-		<script type="text/javascript">
+		<script>
 			var maxcount=10;
-			var answer=parseint(Math.random() * 100);
+			var answer= parseInt(Math.random() * 100);
 			var stepCount=1;
-
-			while (maxcount > 0) {
-				var userAnswer = prompt("Угадай число, будь мужиком, блеать! У тебя еще" + maxcount + "Попыток");
-					userAnswer = parseint(userAnswer);
-
-				if (userAnswer < answer) {
-					alert("Недолет. Мало каши ел.");
-				}
-				else if (userAnswer > answer) {
-					alert("Перебор. Тише, ковбой!");
-				}
-				else if (userAnswer == answer) {
-					alert("Бинго. Ударь в кулачок, бро!");
-				}
-					break; 
-				else {alert ("Введи число, товарищ!");}
 			
-				maxcount --;	
-			}
+			while (stepCount <= maxcount) {
+				var userAnswer = prompt("Угадай число от 0 до 100, будь мужиком! У тебя 10 попыток, попытка №" + stepCount)
+				userAnswer = parseInt(userAnswer);
 
-			if (maxcount == 0) {
-				alert("Днина. Машина загадала " + answer);
+				if ( userAnswer == answer) {alert("Красава. Отбей кулачок");
+				break;
+				}
+				else if (userAnswer < answer) {alert("Мало каши ел. Надо больше");
+				}
+				else if (userAnswer > answer) {alert("Тише, ковбой. Перебор.");
+				}
+				else {alert("Введи число по-мужски!!!");
+				 }
+
+				stepCount++; 
+			}
+			
+			if (stepCount > maxcount) {
+				alert("Днина. Загадано было " + answer);
 			}
 		</script>
 	</body>
